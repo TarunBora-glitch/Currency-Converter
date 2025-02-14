@@ -1,4 +1,4 @@
-const apiKey = "YOUR_API_KEY"; // Replace with your exchangerate-api.com key
+const apiKey = "API_KEY"; // Replace key
 
 const countryCurrencyAPI = "https://restcountries.com/v3.1/all"; 
 const exchangeRateAPI = "https://open.er-api.com/v6/latest/";
@@ -21,7 +21,6 @@ async function fetchCountries() {
               const countryName = country.name.common;
               let flagUrl = country.flags.svg;
 
-              // Ensure USD maps to the USA flag
               if (currencyCode === "USD") {
                   flagUrl = "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg";
               }
@@ -44,7 +43,6 @@ function populateDropdowns() {
     const fromCurrency = document.getElementById("fromCurrency");
     const toCurrency = document.getElementById("toCurrency");
 
-    // Sort countries alphabetically by currency full name
     const sortedCurrencies = Object.keys(countryData)
         .map(code => ({ code, ...countryData[code] }))
         .sort((a, b) => a.fullName.localeCompare(b.fullName));
