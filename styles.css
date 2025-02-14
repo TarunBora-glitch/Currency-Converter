@@ -49,12 +49,9 @@ input:focus, select:focus {
   height: 50px;
   border-radius: 0%;
   object-fit: cover;
-  border-radius: 5px;  /* Slight rounded corners, remove if needed */
+  border-radius: 5px;  
   border: 1px solid #ccc;
 }
-
-
-
 
 input, select, button {
   padding: 10px;
